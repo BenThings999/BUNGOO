@@ -36,8 +36,45 @@ public class Main {
                 case 7:
                     patterns = new Patterns[]{createGPattern()};
                     break;
-                case 8: // OPTION TO QUIT
-                    System.out.println("Exiting game. Goodbye!");
+                case 8:
+                    String asciiExit = """
+                                                               
+                                                                                                                                              
+                                      ██████████████████                                                                                      
+                                  ████                  ████                                                                                  
+                                ██                          ██                                                                                
+                                ██                          ██                                                                                
+                              ██░░                          ░░▓▓                                                                              
+                          ░░  ██  ░░░░                        ██                                                                              
+                          ░░░░░░░░░░░░░░░░          ▓▓▓▓▓▓    ██                                                                              
+                        ░░░░░░░░░░░░░░░░░░░░        ██████    ██                                                                              
+                            ░░██░░  ░░░░░░    ██    ██████    ██                                                                              
+                              ░░▓▓  ░░      ▓▓████          ▓▓                                                                                
+                              ████  ██                  ██  ████        ████████                      ██  ██                                  
+                              ██    ██████████████████████    ██        ██                            ██  ██                                  
+                              ██      ██  ██  ██  ██  ██      ██        ██  ▓▓▓▓  ▓▓▓▓▓▓  ██▓▓▓▓  ▓▓▓▓██  ██▓▓▓▓  ▓▓  ██  ▓▓▓▓▓▓              
+                              ▒▒████    ██████████████    ████▒▒        ██    ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██              
+                            ▒▒▒▒▒▒▒▒████      ▓▓  ▓▓  ████▒▒▒▒▒▒▒▒      ████████  ██████  ██████  ██████  ██████  ██████  ██████              
+                          ░░▒▒██▒▒▒▒▓▓▓▓██████████████▓▓▓▓▒▒▒▒██▒▒                                                    ██  ██                  
+                            ░░░░██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████  ██      ████████████████████████████████████████  ██████  ██████    ██  ██  ██
+                          ░░░░  ██  ▓▓██████▒▒▒▒▒▒██████    ██  ██▓▓                                                                          
+                          ██      ██▓▓▓▓▓▓    ██    ██    ██      ██░░                                                                        
+                        ██    ████  ████▓▓▓▓▓▓      ██████  ████  ░░░░                                                                        
+                        ██        ██    ██▓▓▓▓▓▓  ████    ██        ░░░░                                                                      
+                        ██          ██  ██    ▓▓▓▓  ██  ██          ██                                                                        
+                          ██      ██    ████████▓▓▓▓▓▓▓▓  ██      ██                                                                          
+                            ▓▓▓▓  ██    ████████████▓▓    ██  ▓▓▓▓                                                                            
+                              ██████    ██████████████    ██████                                                                              
+                              ██████████████████████████████████                                                                              
+                            ██████████████████████████████████████                                                                            
+                            ██████████████████  ██████████████████                                                                            
+                              ██████████████      ██████████████                                                                              
+                          ██████          ██      ██          ██████                                                                          
+                          ██            ████      ████            ██                                                                          
+                            ▓▓▓▓▓▓▓▓▓▓▓▓              ▓▓▓▓▓▓▓▓▓▓▓▓                                                                            
+                      
+                            """;                
+                    System.out.println(asciiExit);
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice.");
@@ -55,11 +92,40 @@ public class Main {
     private static boolean askToQuit(Scanner scanner) {
         String input;
         do {
-            System.out.print("Do you want to quit (y/n)? ");
+
+            String human = """
+_____________________________________________________________________________________________________________________________________________________________
+                                                                                                                                                            |
+██████╗  ██████╗     ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗ █████╗ ███╗   ██╗████████╗    ████████╗ ██████╗     ██████╗ ██╗      █████╗ ██╗   ██╗██████╗ |
+██╔══██╗██╔═══██╗    ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║    ██║██╔══██╗████╗  ██║╚══██╔══╝    ╚══██╔══╝██╔═══██╗    ██╔══██╗██║     ██╔══██╗╚██╗ ██╔╝╚════██╗|
+██║  ██║██║   ██║     ╚████╔╝ ██║   ██║██║   ██║    ██║ █╗ ██║███████║██╔██╗ ██║   ██║          ██║   ██║   ██║    ██████╔╝██║     ███████║ ╚████╔╝   ▄███╔╝|
+██║  ██║██║   ██║      ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██╔══██║██║╚██╗██║   ██║          ██║   ██║   ██║    ██╔═══╝ ██║     ██╔══██║  ╚██╔╝    ▀▀══╝ |
+██████╔╝╚██████╔╝       ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║  ██║██║ ╚████║   ██║          ██║   ╚██████╔╝    ██║     ███████╗██║  ██║   ██║     ██╗   |
+╚═════╝  ╚═════╝        ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝          ╚═╝    ╚═════╝     ╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝     ╚═╝   |
+                                                                                                                                                            |
+                                                                                                                                                            |
+                                                                                                                                                            |
+                ██╗██╗   ██╗██╗         ██╗   ██╗███████╗███████╗                                                                                           |
+                ██╔╝╚██╗ ██╔╝╚██╗        ╚██╗ ██╔╝██╔════╝██╔════╝                                                                                          | 
+               ██╔╝  ╚████╔╝  ╚██╗        ╚████╔╝ █████╗  ███████╗                                                                                          |
+               ╚██╗   ╚██╔╝   ██╔╝         ╚██╔╝  ██╔══╝  ╚════██║                                                                                          |
+                ╚██╗   ██║   ██╔╝ ██╗       ██║   ███████╗███████║                                                                                          |     
+                 ╚═╝   ╚═╝   ╚═╝  ╚═╝       ╚═╝   ╚══════╝╚══════╝                                                                                          |
+                                                                                                                                                            |
+                 ██╗███╗   ██╗██╗         ███╗   ██╗ ██████╗                                                                                                |
+                ██╔╝████╗  ██║╚██╗        ████╗  ██║██╔═══██╗                                                                                               |
+               ██╔╝ ██╔██╗ ██║ ╚██╗       ██╔██╗ ██║██║   ██║                                                                                               |
+               ╚██╗ ██║╚██╗██║ ██╔╝       ██║╚██╗██║██║   ██║                                                                                               |
+                ╚██╗██║ ╚████║██╔╝ ██╗    ██║ ╚████║╚██████╔╝                                                                                               |
+                 ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝    ╚═╝  ╚═══╝ ╚═════╝                                                                                                |
+____________________________________________________________________________________________________________________________________________________________|                          
+                    """;
+            
+            System.out.println(human);
             input = scanner.nextLine().toLowerCase();
             if(!input.equalsIgnoreCase("y")&&!input.equalsIgnoreCase("n")){
                 System.out.println("Please enter valid input (y/n)");
-            }
+            } 
         }while (!input.equalsIgnoreCase("y")&&!input.equalsIgnoreCase("n"));
         return input.equals("y");
     }
@@ -68,19 +134,24 @@ public class Main {
         int choice = 0;
         boolean validInput = false;
         while (!validInput) {
-            try {
-                choice = scanner.nextInt();
-                if (choice < 1 || choice > 8) {
-                    System.out.println("Invalid choice. Please enter a number between 1 and 7.");
-                    System.out.print("Enter your choice: ");
-                } else {
-                    validInput = true;
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a number.");
-                scanner.nextLine(); // Clear the invalid input
-                System.out.print("Enter your choice: ");
-            }
+            if(scanner.hasNextLine()){ 
+                String strChoice = scanner.nextLine().replaceAll("0"," ");          
+                    try {
+                        choice = Integer.parseInt(strChoice);
+                            if (choice < 1 || choice > 8){
+                                System.out.println("Invalid choice. Please enter a number between 1 and 7.");
+                                System.out.print("Enter your choice: ");
+                            } else {
+                                validInput = true;
+                                break;
+                            }
+
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid input / There's no input. Please enter a number.");
+                        // scanner.nextLine(); // Clear the invalid input
+                        System.out.print("Enter your choice: ");
+                    }
+            } 
         }
         scanner.nextLine(); // Clear the newline character
         return choice;
@@ -88,16 +159,37 @@ public class Main {
 
     // Method to print the main menu
     private static void printMainMenu() {
-        System.out.println("Welcome to Bingo!");
-        System.out.println("Choose the type of pattern:");
-        System.out.println("1. X Pattern");
-        System.out.println("2. Blackout Pattern");
-        System.out.println("3. Both Diagonal Patterns");
-        System.out.println("4. Four Corners Pattern");
-        System.out.println("5. Horizontal Pattern");
-        System.out.println("6. Vertical Pattern");
-        System.out.println("7. G Pattern");
-        System.out.println("8. Exit");
+
+        String textAscii = """
+                
+ __| |____________________________________________| |__
+ (__   ____________________________________________   __)
+    | |              Welcome to Bingo!             | |
+    | |        Choose the type of pattern          | |
+    | |        -> 1. X Pattern                     | |
+    | |        -> 2. Blackout Pattern              | |
+    | |        -> 3. Both Diagonal Patterns        | |
+    | |        -> 4. Four Corners Pattern          | |
+    | |        -> 5. Horizontal Pattern            | |     
+    | |        -> 6. Vertical Pattern              | |
+    | |        -> 7. G Pattern                     | |
+    | |        -> 8. Exit                          | |
+  __| |____________________________________________| |__
+ (__   ____________________________________________   __)
+    | |                                            | |
+ 
+                """;
+        // System.out.println("Welcome to Bingo!");
+        // System.out.println("Choose the type of pattern:");
+        // System.out.println("1. X Pattern");
+        // System.out.println("2. Blackout Pattern");
+        // System.out.println("3. Both Diagonal Patterns");
+        // System.out.println("4. Four Corners Pattern");
+        // System.out.println("5. Horizontal Pattern");
+        // System.out.println("6. Vertical Pattern");
+        // System.out.println("7. G Pattern");
+        // System.out.println("8. Exit");
+        System.out.println(textAscii);
         System.out.print("Enter your choice: ");
     }
 
